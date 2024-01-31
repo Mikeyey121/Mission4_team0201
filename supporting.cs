@@ -15,6 +15,10 @@ namespace Mission4_team0201
             winner and who it was */
     internal class Supporting
     {
+        // Create a method that receives the board array from the driver class and prints the board based on the guesses received
+        public string TestMethod(string[] board)
+        {
 
+        }
     }
 }
