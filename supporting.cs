@@ -16,9 +16,13 @@ namespace Mission4_team0201
     internal class Supporting
     {
         // Create a method that receives the board array from the driver class and prints the board based on the guesses received
-        public string TestMethod(string[] board)
+        public string printBoard(string[] board)
         {
+            string[] boardArray = board;
 
+            string resultPrint = $"{boardArray[0]}|{boardArray[1]}|{boardArray[2]}\n----------------\n{boardArray[3]}|{boardArray[4]}|{boardArray[5]}\n--------------------\n{boardArray[6]}|{boardArray[7]}|{boardArray[8]}\n";
+
+            return resultPrint;
         }
     }
 }
