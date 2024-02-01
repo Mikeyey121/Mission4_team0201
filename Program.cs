@@ -1,6 +1,8 @@
-﻿//using supporting.cs;
+﻿using Mission4_team0201;
 
-class Driver()
+Supporting sp = new Supporting();
+
+class Driver
 {
 
     static char currentPlayer = 'X';
@@ -11,7 +13,24 @@ class Driver()
 
         Driver.createBoard();
         //checkWinner();
-        Driver.playerMove();
+
+        do
+        {
+            sp.printBoard(gameboard);
+            playerMove();
+
+            if (sp.checkForWin(gameboard, currentPlayer))
+            {
+                sp.printBoard(gameboard);
+                Console.Write("Player " + currentPlayer + " wins!");
+                break;
+            }
+
+            //switch player for next turn
+
+        } while //insert condition
+
+        //Message for a draw if the board is full
 
     }
     
