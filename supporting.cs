@@ -62,25 +62,22 @@ namespace Mission4_team0201
         }
 
         // Method to find the winner of a game. It takes the board array as an input
-        public string findWinner(string[] board)
+        public string findWinner(string[] board,string player)
         {
             // Declaring local variables for the board and our result. 
             string[] boardArray = board;
             string result = "";
+            string playerName = player;
 
             // Calling our function twice for each player
-            bool isXWinner = CheckWinner(boardArray, "X");
-            bool isOWinner = CheckWinner(boardArray, "O");
+            bool isXWinner = CheckWinner(boardArray, playerName);
 
             // If statement which will set the result variable who the winner is, or no winner
             if (isXWinner)
             {
-                result = ("X Wins!");
+                result = ($"{playerName} Wins!");
             }
-            else if (isOWinner)
-            {
-                result = ("O Wins!");
-            }
+
             else
             {
                 result = ("No Winner yet.");

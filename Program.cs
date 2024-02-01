@@ -1,7 +1,5 @@
 ﻿using Mission4_team0201;
 
-Supporting sp = new Supporting();
-
 class Driver
 {
 
@@ -9,26 +7,29 @@ class Driver
     static char[,] gameboard = new char[3, 3];
     public static void Main()
     {
+        Supporting sp = new Supporting();
+
         Console.WriteLine("Welcome to Tic Tac Toe!");
 
         Driver.createBoard();
         //checkWinner();
+        bool play = true;
 
         do
         {
             sp.printBoard(gameboard);
             playerMove();
 
-            if (sp.checkForWin(gameboard, currentPlayer))
+            if (sp.findWinner(gameboard, currentPlayer))
             {
                 sp.printBoard(gameboard);
                 Console.Write("Player " + currentPlayer + " wins!");
-                break;
+                play = false;
             }
 
             //switch player for next turn
 
-        } while //insert condition
+        } while (play == true);
 
         //Message for a draw if the board is full
 
