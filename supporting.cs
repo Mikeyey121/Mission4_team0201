@@ -20,9 +20,74 @@ namespace Mission4_team0201
         {
             string[] boardArray = board;
 
-            string resultPrint = $"{boardArray[0]}|{boardArray[1]}|{boardArray[2]}\n----------------\n{boardArray[3]}|{boardArray[4]}|{boardArray[5]}\n--------------------\n{boardArray[6]}|{boardArray[7]}|{boardArray[8]}\n";
+            string resultBoard = $"{boardArray[0]} | {boardArray[1]} | {boardArray[2]}\n----------\n{boardArray[3]} | {boardArray[4]} | {boardArray[5]}\n----------\n{boardArray[6]} | {boardArray[7]} | {boardArray[8]}\n";
 
-            return resultPrint;
+            return resultBoard;
+        }
+
+        // Function to make checking the winner really easy. Just writing everything once. 
+        // It takes the board array as an input and which player it is, X or O.
+        public bool CheckWinner(string[] boardArray, string player)
+        {
+            // Declare the result variable
+            bool result = false ;
+            // Check rows for a win
+            if ((boardArray[0] == player && boardArray[1] == player && boardArray[2] == player) ||
+                (boardArray[3] == player && boardArray[4] == player && boardArray[5] == player) ||
+                (boardArray[6] == player && boardArray[7] == player && boardArray[8] == player))
+            {
+                result = true;
+            }
+
+            // Check columns for a win
+            if ((boardArray[0] == player && boardArray[3] == player && boardArray[6] == player) ||
+                (boardArray[1] == player && boardArray[4] == player && boardArray[7] == player) ||
+                (boardArray[2] == player && boardArray[5] == player && boardArray[8] == player))
+            {
+                result =  true;
+            }
+
+            // Check diagonals for a win
+            if ((boardArray[0] == player && boardArray[4] == player && boardArray[8] == player) ||
+                (boardArray[2] == player && boardArray[4] == player && boardArray[6] == player))
+            {
+                result = true;
+            }
+
+            // If none of the above conditions are met, return false
+            result =  false;
+
+            // Returning a boolean true or false. 
+            return result ;
+        }
+
+        // Method to find the winner of a game. It takes the board array as an input
+        public string findWinner(string[] board)
+        {
+            // Declaring local variables for the board and our result. 
+            string[] boardArray = board;
+            string result = "";
+
+            // Calling our function twice for each player
+            bool isXWinner = CheckWinner(boardArray, "X");
+            bool isOWinner = CheckWinner(boardArray, "O");
+
+            // If statement which will set the result variable who the winner is, or no winner
+            if (isXWinner)
+            {
+                result = ("X Wins!");
+            }
+            else if (isOWinner)
+            {
+                result = ("O Wins!");
+            }
+            else
+            {
+                result = ("No Winner yet.");
+            }
+
+            // Returns string result
+            return result;
         }
     }
 }
