@@ -21,7 +21,6 @@ class Driver
         {
             Console.WriteLine(sp.printBoard(gameboard));
             playerMove();
-            Console.WriteLine($"The output of find a winner method is: {sp.findWinner(gameboard,currentPlayer.ToString())}");
             if (sp.findWinner(gameboard, currentPlayer.ToString()) != "No Winner yet.")
             {
                 Console.WriteLine(sp.printBoard(gameboard));

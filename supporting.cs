@@ -57,8 +57,10 @@ namespace Mission4_team0201
             }
 
             // If none of the above conditions are met, return false
-            result =  false;
-
+            else
+            {
+                result = false;
+            }
             // Returning a boolean true or false. 
             return result ;
         }
@@ -73,7 +75,6 @@ namespace Mission4_team0201
 
             // Calling our function twice for each player
             bool isWinner = CheckWinner(boardArray, playerName);
-
             // If statement which will set the result variable who the winner is, or no winner
             if (isWinner)
             {
