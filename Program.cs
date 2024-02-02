@@ -1,12 +1,14 @@
 ﻿using Mission4_team0201;
 
-class Driver
+internal class Driver
 {
 
-    static char currentPlayer = 'X';
-    static char[,] gameboard = new char[3, 3];
+
     public static void Main()
     {
+        char currentPlayer = 'X';
+        string[,] gameboard = new string[3, 3];
+
         Supporting sp = new Supporting();
 
         Console.WriteLine("Welcome to Tic Tac Toe!");
