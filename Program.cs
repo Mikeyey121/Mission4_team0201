@@ -21,7 +21,7 @@ class Driver
         {
             Console.WriteLine(sp.printBoard(gameboard));
             playerMove();
-
+            Console.WriteLine($"The output of find a winner method is: {sp.findWinner(gameboard,currentPlayer.ToString())}");
             if (sp.findWinner(gameboard, currentPlayer.ToString()) != "No Winner yet.")
             {
                 Console.WriteLine(sp.printBoard(gameboard));
@@ -35,7 +35,7 @@ class Driver
         //Message for a draw if the board is full
         if (IsBoardFull() && sp.findWinner(gameboard, currentPlayer.ToString()) == "No Winner yet.")
         {
-            sp.printBoard(gameboard);
+            Console.WriteLine(sp.printBoard(gameboard));
             Console.WriteLine("It's a draw!");
         }
 
