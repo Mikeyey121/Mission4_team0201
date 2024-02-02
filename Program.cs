@@ -19,12 +19,12 @@ class Driver
 
         do
         {
-            sp.printBoard(gameboard);
+            Console.WriteLine(sp.printBoard(gameboard));
             playerMove();
 
             if (sp.findWinner(gameboard, currentPlayer.ToString()) != "No Winner yet.")
             {
-                sp.printBoard(gameboard);
+                Console.WriteLine(sp.printBoard(gameboard));
                 Console.WriteLine(sp.findWinner(gameboard, currentPlayer.ToString()));
                 play = false;
             }
