@@ -33,24 +33,19 @@ namespace Mission4_team0201
         {
             // Declare the result variable
             bool result = false ;
-            // Check rows for a win
-            if ((boardArray[0] == player && boardArray[1] == player && boardArray[2] == player) ||
+
+            //Check board for wins
+
+            if (//rows
+                (boardArray[0] == player && boardArray[1] == player && boardArray[2] == player) ||
                 (boardArray[3] == player && boardArray[4] == player && boardArray[5] == player) ||
-                (boardArray[6] == player && boardArray[7] == player && boardArray[8] == player))
-            {
-                result = true;
-            }
-
-            // Check columns for a win
-            if ((boardArray[0] == player && boardArray[3] == player && boardArray[6] == player) ||
+                (boardArray[6] == player && boardArray[7] == player && boardArray[8] == player) ||
+                //columns
+                (boardArray[0] == player && boardArray[3] == player && boardArray[6] == player) ||
                 (boardArray[1] == player && boardArray[4] == player && boardArray[7] == player) ||
-                (boardArray[2] == player && boardArray[5] == player && boardArray[8] == player))
-            {
-                result =  true;
-            }
-
-            // Check diagonals for a win
-            if ((boardArray[0] == player && boardArray[4] == player && boardArray[8] == player) ||
+                (boardArray[2] == player && boardArray[5] == player && boardArray[8] == player) ||
+                // diagonals
+                (boardArray[0] == player && boardArray[4] == player && boardArray[8] == player) ||
                 (boardArray[2] == player && boardArray[4] == player && boardArray[6] == player))
             {
                 result = true;
