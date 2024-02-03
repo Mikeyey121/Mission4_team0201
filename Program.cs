@@ -51,19 +51,30 @@ class Driver
     {
 
         Console.Write("Player " + currentPlayer + " select position (1-9): ");
-        position = int.Parse(Console.ReadLine()) - 1;
+        string input = Console.ReadLine();
 
-        if (position >= 0 && position < 9 && !IsBoardFull() && gameboard[position] == " ")
+        if (int.TryParse(input, out int parsedPosition))
         {
-            gameboard[position] = currentPlayer.ToString();
+            position = parsedPosition - 1;
+
+            if (position >= 0 && position < 9 && !IsBoardFull() && gameboard[position] == " ")
+            {
+                gameboard[position] = currentPlayer.ToString();
+            }
+            else
+            {
+                Console.WriteLine("Please select a valid position");
+                playerMove();
+            }
+
+            //Print board after each input and repeat through the playerMove method after alternating currentPlayer to "O";   
+            sp.printBoard(gameboard);
         }
         else
         {
-            Console.WriteLine("Please select a valid position");
+            Console.WriteLine("Please enter a number between 1 and 9");
             playerMove();
         }
-        //Print board after each input and repeat through the playerMove method after alternating currentPlayer to "O";   
-        sp.printBoard(gameboard);
     }
 
     public static bool IsBoardFull()
