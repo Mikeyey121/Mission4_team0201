@@ -11,18 +11,19 @@ class Driver
 
     public static void Main()
     {
+        Supporting sp = new Supporting();
+
         Console.WriteLine("Welcome to Tic Tac Toe!");
         bool play = true;
         createBoard();
 
         do
         {
-            sp.printBoard(gameboard);
+            Console.WriteLine(sp.printBoard(gameboard));
             playerMove();
-
             if (sp.findWinner(gameboard, currentPlayer.ToString()) != "No Winner yet.")
             {
-                sp.printBoard(gameboard);
+                Console.WriteLine(sp.printBoard(gameboard));
                 Console.WriteLine(sp.findWinner(gameboard, currentPlayer.ToString()));
                 play = false;
             }
@@ -33,7 +34,7 @@ class Driver
         //Message for a draw if the board is full
         if (IsBoardFull() && sp.findWinner(gameboard, currentPlayer.ToString()) == "No Winner yet.")
         {
-            sp.printBoard(gameboard);
+            Console.WriteLine(sp.printBoard(gameboard));
             Console.WriteLine("It's a draw!");
         }
 

@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 // DAVIS AND MICHAEL'S DOMAIN!!
+// Davis Rasband and Michael Hutchings created this class
+// Harrison Stone and Jonah Allen created the program.cs 
 namespace Mission4_team0201
 {
     /*  - Receive the “board” array from the driver class
@@ -55,8 +57,10 @@ namespace Mission4_team0201
             }
 
             // If none of the above conditions are met, return false
-            result =  false;
-
+            else
+            {
+                result = false;
+            }
             // Returning a boolean true or false. 
             return result ;
         }
@@ -70,10 +74,9 @@ namespace Mission4_team0201
             string playerName = player;
 
             // Calling our function twice for each player
-            bool isXWinner = CheckWinner(boardArray, playerName);
-
+            bool isWinner = CheckWinner(boardArray, playerName);
             // If statement which will set the result variable who the winner is, or no winner
-            if (isXWinner)
+            if (isWinner)
             {
                 result = ($"{playerName} Wins!");
             }
